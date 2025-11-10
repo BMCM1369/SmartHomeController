@@ -13,32 +13,40 @@ namespace SmartHomeController
         private string password;
         private string contactInfo;
         private bool isLoggedIn;
-        public int UserId { 
-            get { return userId; } 
-            set { userId = value; } }
+        public int UserId
+        {
+            get { return userId; }
+            set { userId = value; }
+        }
 
-        public string UserName { 
-            get { return userName; } 
-            set { userName = value; } }
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value; }
+        }
 
-        public string ContactInfo { 
-            get { return contactInfo; } 
-            set {  contactInfo = value; } }
+        public string ContactInfo
+        {
+            get { return contactInfo; }
+            set { contactInfo = value; }
+        }
 
         public string Password
         {
             get { return password; }
-            set { password = value; } }
+            set { password = value; }
+        }
         public bool IsLoggedIn
         {
             get { return isLoggedIn; }
             set { isLoggedIn = value; }
         }
-        
+
 
         public bool Login(string userName, string password)
         {
-            if (UserName == userName && Password == password) {
+            if (UserName == userName && Password == password)
+            {
                 IsLoggedIn = true;
                 Console.WriteLine("Login Successful, Welcome" + userName);
 
@@ -63,6 +71,22 @@ namespace SmartHomeController
             }
             return IsLoggedIn;
         }
-    }
 
+        public User(int userId,
+            string userName,
+            string password,
+            string contactInfo,
+            bool isLoggedIn)  
+        {
+            UserId = userId;
+            UserName = userName;
+            Password = password;   
+            ContactInfo = contactInfo;
+            IsLoggedIn = isLoggedIn;
+
+
+
+        }
+
+    }
 }
