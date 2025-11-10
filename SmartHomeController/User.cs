@@ -34,6 +34,7 @@ namespace SmartHomeController
             get { return isLoggedIn; }
             set { isLoggedIn = value; }
         }
+        
 
         public bool Login(string userName, string password)
         {
@@ -46,6 +47,19 @@ namespace SmartHomeController
             {
                 IsLoggedIn = false;
                 Console.WriteLine("Login failed, try again");
+            }
+            return IsLoggedIn;
+        }
+        public bool LogOut()
+        {
+            if (IsLoggedIn)
+            {
+                IsLoggedIn = false;
+                Console.WriteLine("User logged out successfullyy");
+            }
+            else
+            {
+                Console.WriteLine("User is not logged in");
             }
             return IsLoggedIn;
         }
